@@ -1,0 +1,82 @@
+@use "../utils/mixins" as *;
+
+.main-header,
+.detail-page {
+  a {
+    transition: 0.3s ease;
+  }
+  a:hover {
+    color: black !important;
+  }
+}
+// mobile
+@media (max-width: 47.9375rem) {
+  .main-header {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    margin-right: auto;
+    height: 32px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .main-header {
+    a {
+      @include link-one-mob;
+    }
+  }
+}
+
+// tablet
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .main-header {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    margin-right: auto;
+    height: 32px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .main-header {
+    a {
+      @include link-one-desk-tab;
+    }
+  }
+}
+
+// desktop
+@media (min-width: 64rem) {
+  .main-header {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    margin-right: auto;
+    height: 48px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .main-header {
+    a {
+      @include link-one-desk-tab;
+    }
+  }
+}
