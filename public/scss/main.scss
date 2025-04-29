@@ -1,0 +1,21 @@
+// Utils
+@use "utils/functions";
+@use "utils/mixins";
+@use "utils/variables";
+
+// Base styles
+@use "base/reset";
+@use "base/base";
+@use "base/typography";
+
+// Layout
+@use "layout/footer";
+@use "layout/grid";
+
+// Components
+@use "components/buttons";
+@use "components/header";
+
+// Pages
+@use "pages/home";
+@use "pages/detail";

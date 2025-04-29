@@ -1,0 +1,551 @@
+@use "../utils/mixins" as *;
+@use "../utils/variables" as *;
+
+.detail-page {
+  .view-btn {
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: 0.3s ease;
+  }
+  .view-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.detail-footer {
+  button {
+    opacity: 100%;
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    opacity: 70%;
+  }
+
+  button:disabled {
+    opacity: 30%;
+  }
+
+  .progress-container {
+    background-color: $c-light-gray;
+  }
+
+  .progress-bar {
+    height: 1px;
+    background-color: black;
+    transition: 0.3s ease;
+  }
+}
+// mobile
+@media (max-width: 47.9375rem) {
+  .detail-page {
+    // border: solid 1px green;
+
+    .detail-container {
+      position: relative;
+    }
+
+    .art-image {
+      width: 100%;
+      display: block;
+    }
+
+    .view-button-container {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+    }
+
+    .view-btn {
+      font-family: "Libre Baskerville";
+      font-weight: 700;
+      font-size: 0.625rem;
+      letter-spacing: 2.14px;
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+
+      color: white;
+    }
+
+    .view-btn::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      margin-right: 14px;
+      background: url("../assets/shared/icon-view-image.svg");
+    }
+
+    .artwork-card {
+      position: relative;
+    }
+
+    .art-meta {
+      position: absolute;
+      background-color: white;
+      top: 100%;
+      transform: translateY(-50%);
+      padding: 24px;
+      width: calc(100% - 47px);
+
+      h2 {
+        @include heading-two-desk-tab;
+        margin-bottom: 8px;
+      }
+
+      .artist-name {
+        @include s-heading-one;
+        font-size: 0.9375rem;
+        color: $c-gray;
+      }
+    }
+
+    .art-image-desktop {
+      display: none;
+    }
+
+    .artist-image-container {
+      position: absolute;
+      top: calc(100%);
+      width: 64px;
+      height: 64px;
+    }
+
+    .artist-image {
+      width: 100%;
+    }
+
+    .description {
+      @include s-heading-one;
+      font-size: 0.875rem;
+      line-height: 28px;
+      color: $c-gray;
+      font-weight: 700;
+      position: relative;
+      padding-top: 172px;
+    }
+
+    .creation-date {
+      font-family: "Libre Baskerville";
+      font-size: 6.25rem;
+      font-weight: 700;
+      color: $c-very-light-gray;
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 138px;
+      left: 100%;
+      transform: translateX(-100%);
+    }
+
+    .link-container {
+      margin-top: 68px;
+      margin-bottom: 67px;
+
+      a {
+        @include link-one-mob;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // footer
+  .detail-footer {
+    padding: 17px 0;
+
+    .progress-container {
+      margin: 0 -24px;
+    }
+
+    .progress-bar {
+      margin-bottom: 17px;
+    }
+
+    .footer-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h3 {
+      @include heading-two-desk-tab;
+      font-size: 0.875rem;
+      margin-bottom: 9px;
+    }
+
+    p {
+      @include s-heading-one;
+      font-size: 0.625rem;
+      opacity: 75%;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      gap: 0 23.24px;
+    }
+
+    button {
+      width: 16.78px;
+    }
+
+    img {
+      width: 100%;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+// tablet
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .detail-page {
+    .artwork-card {
+      position: relative;
+      margin-bottom: 64px;
+      max-height: 560px;
+    }
+
+    .artwork-container {
+      position: relative;
+      // margin-right: 213px;
+      width: 66%;
+    }
+
+    .view-button-container {
+      position: absolute;
+      top: calc(100% - 16px);
+      left: 16px;
+      transform: translateY(-100%);
+    }
+
+    .view-btn {
+      font-family: "Libre Baskerville";
+      font-weight: 700;
+      font-size: 0.625rem;
+      letter-spacing: 2.14px;
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+
+      color: white;
+    }
+
+    .view-btn::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      margin-right: 14px;
+      background: url("../assets/shared/icon-view-image.svg");
+    }
+
+    .art-image,
+    .artist-image {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .art-meta {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      transform: translateX(-100%);
+      width: 66%;
+      padding: 0 0 67px 65px;
+      background-color: white;
+    }
+
+    h2 {
+      @include heading-two-desk-tab;
+      font-size: 3.5rem;
+      line-height: 64px;
+      margin-bottom: 24px;
+    }
+
+    .artist-name {
+      @include s-heading-one;
+      font-size: 0.9375rem;
+      color: $c-gray;
+    }
+
+    .art-image-desktop {
+      display: none;
+    }
+
+    .artist-image-container {
+      position: absolute;
+      top: 100%;
+      left: calc(50% + 30px);
+      width: 128px;
+      height: 128px;
+    }
+
+    .description {
+      @include s-heading-one;
+      font-size: 0.875rem;
+      line-height: 28px;
+      color: $c-gray;
+      position: relative;
+      padding-top: 75px;
+      padding-left: 16.72%;
+      margin-right: 16.87%;
+    }
+
+    .creation-date {
+      font-family: "Libre Baskerville";
+      font-size: 12.5rem;
+      font-weight: 700;
+      line-height: 150px;
+      color: $c-very-light-gray;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    .link-container {
+      margin: 40px 0 53px 16.72%;
+
+      a {
+        @include link-one-mob;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // footer
+  .detail-footer {
+    padding-bottom: 24px;
+
+    .progress-container {
+      margin: 0 -40px;
+    }
+
+    .progress-bar {
+      margin-bottom: 24px;
+    }
+
+    .footer-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h3 {
+      @include heading-two-desk-tab;
+      font-size: 1.125rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      @include s-heading-one;
+      font-size: 0.8125rem;
+      opacity: 75%;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      gap: 0 40.36px;
+    }
+
+    button {
+      width: 25.17px;
+    }
+
+    img {
+      width: 100%;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+// desktop
+@media (min-width: 64rem) {
+  .detail-page {
+    .detail-container {
+      display: flex;
+      align-items: center;
+      gap: 0 30px;
+    }
+
+    //layout
+    .artwork-card {
+      flex-basis: 63%;
+    }
+
+    article {
+      flex-basis: 37%;
+      align-self: flex-start;
+    }
+    //layout
+
+    .artwork-card {
+      padding-bottom: 64px;
+      position: relative;
+    }
+
+    .artwork-container {
+      position: relative;
+      padding-right: 45%;
+    }
+
+    .art-image {
+      display: block;
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+    }
+
+    .view-button-container {
+      position: absolute;
+      top: calc(100% - 16px);
+      left: 16px;
+      transform: translateY(-100%);
+    }
+
+    .view-btn {
+      font-family: "Libre Baskerville";
+      font-weight: 700;
+      font-size: 0.625rem;
+      letter-spacing: 2.14px;
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+
+      color: white;
+    }
+
+    .view-btn::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      margin-right: 14px;
+      background: url("../assets/shared/icon-view-image.svg");
+    }
+
+    .art-meta {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      transform: translateX(-100%);
+      width: 55%;
+      padding-left: 65px;
+      padding-bottom: 67px;
+      background-color: white;
+
+      .artist-image {
+        display: none;
+      }
+    }
+
+    h2 {
+      @include heading-two-desk-tab;
+      font-size: 3.5rem;
+      line-height: 64px;
+      margin-bottom: 24px;
+    }
+
+    .artist-name {
+      @include s-heading-one;
+      font-size: 0.9375rem;
+      color: $c-gray;
+    }
+
+    .art-image-desktop {
+      position: absolute;
+      top: 100%;
+      left: calc(55% + 30px);
+      transform: translateY(calc(-100% + 64px));
+      width: 128px;
+      height: 128px;
+
+      img {
+        display: block;
+      }
+    }
+
+    .description {
+      @include s-heading-one;
+      font-size: 0.875rem;
+      line-height: 28px;
+      color: $c-gray;
+      font-weight: 700;
+      position: relative;
+      padding-top: 115px;
+      padding-right: 26%;
+    }
+
+    .creation-date {
+      font-family: "Libre Baskerville";
+      font-size: 12.5rem;
+      font-weight: 700;
+      line-height: 150px;
+      color: $c-very-light-gray;
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    .link-container {
+      margin-top: 60px;
+      a {
+        @include link-one-mob;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // footer
+  .detail-footer {
+    margin-top: 75px;
+
+    padding-bottom: 24px;
+
+    .progress-container {
+      margin: 0 -40px;
+    }
+
+    .progress-bar {
+      margin-bottom: 24px;
+    }
+
+    .footer-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h3 {
+      @include heading-two-desk-tab;
+      font-size: 1.125rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      @include s-heading-one;
+      font-size: 0.8125rem;
+      opacity: 75%;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      gap: 0 40.36px;
+    }
+
+    button {
+      width: 25.17px;
+    }
+
+    img {
+      width: 100%;
+      transition: 0.3s ease;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@use "../base/typography" as *;
+@use "../utils/variables" as *;
+
+@mixin typo($color, $size, $weight, $l-height, $l-spacing) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $l-height;
+  letter-spacing: $l-spacing;
+}
+
+@mixin display-desk-tab {
+  font-family: "Libre Baskerville";
+  @include typo($c-very-light-gray, 12.5rem, 700, 150px, 0);
+}
+
+@mixin diplay-mob {
+  font-family: "Libre Baskerville";
+  @include typo($c-very-light-gray, 6.25rem, 700, 100px, 0);
+}
+
+// heading 1
+@mixin heading-one-desk-tab {
+  font-family: "Libre Baskerville";
+  @include typo(black, 3.5rem, 700, 64px, 0);
+}
+
+@mixin heading-one-mob {
+  font-family: "Libre Baskerville";
+  @include typo(black, 1.5rem, 700, 29px, 0);
+}
+
+// heading 2
+@mixin heading-two-desk-tab {
+  font-family: "Libre Baskerville";
+  @include typo(black, 1.5rem, 700, auto, 0); //24
+}
+
+@mixin heading-two-mob {
+  font-family: "Libre Baskerville";
+  @include typo(black, 0.875rem, 700, auto, 0);
+}
+
+// subhead1
+@mixin s-heading-one {
+  font-family: "Libre Baskerville";
+  @include typo(black, 50rem, 400, auto, 0);
+}
+
+// link 1
+@mixin link-one-desk-tab {
+  font-family: "Libre Baskerville";
+  @include typo($c-gray, 0.75rem, 700, auto, 2.57px);
+}
+
+@mixin link-one-mob {
+  font-family: "Libre Baskerville";
+  @include typo($c-gray, 0.5625rem, 700, auto, 1.93px);
+}
