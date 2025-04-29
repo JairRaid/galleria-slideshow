@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- email: rakotonirainyriija@gmail.com
-- facebook: https://web.facebook.com/jair.rakoto.3/
+- Solution URL: https://github.com/JairRaid/galleria-slideshow
+- Live Site URL: https://jairraid.github.io/galleria-slideshow/
 
 ## My process
 
